@@ -22,11 +22,13 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 //Routes
-app.use('/api/donate',require('./routes/donate.js'));
+//lista las donaciones de postgres
+app.use('/api/getDonation',require('./routes/donate.js'));
+//agrega una donacion a postgres
+app.use('/api/setDonation',require('./routes/donate.js'));
 
 //statics files
 app.use(express.static(path.join(__dirname,'public')));
-
 
 //iniciar servidor
 app.listen(app.get('port'),()=>{
