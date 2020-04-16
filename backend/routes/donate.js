@@ -1,11 +1,9 @@
 const {Router} = require('express');
 const router = Router();
-const pool = require('../database.js');
+//inportar las funciones del archivo controllerDonate.js
+const { getDonation,addDonation } = require('../controller/controllerDonate.js');
 
 //rutas
-router.get('/', async (req,res)=>{
-    const response = await pool.query('SELECT * FROM donation');
-    res.status(200).json(response.rows);
-});
-
+router.get('/',getDonation );
+router.post('/',addDonation);
 module.exports = router;
