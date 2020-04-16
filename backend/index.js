@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const multer = require('multer');
- const path = require('path');
+const path = require('path');
 
 //inicializaciones
 const app = express();
@@ -20,6 +20,13 @@ const storage = multer.diskStorage({
 app.use(multer(storage).single('image'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+
+//Routes
+app.use('/api/donate',require('./routes/donate.js'));
+
+//statics files
+app.use(express.static(path.join(__dirname,'public')));
+
 
 //iniciar servidor
 app.listen(app.get('port'),()=>{
