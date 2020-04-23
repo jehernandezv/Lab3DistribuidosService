@@ -1,12 +1,12 @@
 const pool = require('../database.js');
 
-//metodo que consulta en postgres las donaciones
+//método que consulta en postgres las donaciones
 const getDonation = async (req,res)=>{
     const response = await pool.query('SELECT * FROM donation');
     res.status(200).json(response.rows);
 }
 
-//metodo que agrega las donaciones
+//método que agrega las donaciones
 const addDonation = async (req, res) => {
     const { email, value, url_image } = req.body;
     const response = await pool.query('INSERT INTO donation (email, value, url_image) VALUES ($1,$2,$3)',[email, value, url_image]);
@@ -19,9 +19,11 @@ const addDonation = async (req, res) => {
     });
 }
 
-//metodo trae donacion por id
+//método trae donación por id
 const getDonationByID = async (req, res) =>{
-    res.send('Donation ID');
+    const id = req.params.id;
+    const response = await pool.query('SELECT * FROM donation WHERE id = $1',[id]);
+    res.json(response.rows);
 };
 
 module.exports = {
