@@ -1,7 +1,7 @@
 import './styles/styles.css';
 import DonationService from './services/DonationService'
 document.getElementById('donation-form')
-.addEventListener('submit',e => {
+.addEventListener('submit',function(e) {
     const email = document.getElementById('Email').value;
     const value = document.getElementById('value').value;
     const image = document.getElementById('image').files;
