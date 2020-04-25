@@ -8,14 +8,12 @@ const getDonation = async (req,res)=>{
 
 //método que agrega las donaciones
 const addDonation = async (req, res) => {
-    const { email, value, url_image } = req.body;
-    const response = await pool.query('INSERT INTO donation (email, value, url_image) VALUES ($1,$2,$3)',[email, value, url_image]);
+    const { email, value, image } = req.body;
+    const response = await pool.query('INSERT INTO donation (email, value, url_image) VALUES ($1,$2,$3)',[email, value, ""]);
     console.log(response);
+    
     res.json({
-        message: 'Donacion creada exitosamente',
-        body: {
-            donation:{email,value,url_image}
-        }
+        message: 'Donacion creada exitosamente'
     });
 }
 
