@@ -5,7 +5,7 @@ class DonationService{
     }
 
     async getDonation(){
-       const response = await fect(this.URL);
+       const response = await fetch(this.URL);
        const donations = await response.json();
        return donations;
     }

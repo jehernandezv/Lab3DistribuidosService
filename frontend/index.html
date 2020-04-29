@@ -24,17 +24,16 @@
                <form id="donation-form" class="card card-body" action="">
                    
                 <div class="form-group">
-                    <input type="text" id="Email" required name="Email" class="form-control" placeholder="Ingrese su E-mail"
+                    <input type="email" id="Email" required required name="Email" class="form-control" placeholder="Ingrese su E-mail"
                     title="autofocus">
                 </div>
                 
                 <div class="form-group">
-                    <input type="number" id="value" name="value" class="form-control" placeholder="Ingrese el valor de su donación"
-                    title="autofocus">
+                    <input type="number" id="value" name="value" required class="form-control" placeholder="Ingrese el valor de su donación">
                 </div>
 
                 <div class="custom-file py-4">
-                    <input type="file" name="image" class="custom-file-input" id="image">
+                    <input type="file" name="image" required class="custom-file-input" id="image">
                     <label for="image" class="custom-file-label">Elige una imagen</label>
                 </div>
                 
@@ -42,7 +41,7 @@
                </form>
             </div>
 
-            <div class="col-md-8 py-5" id="donation-cards">
+            <div class="col-md-8" id="donation-cards">
                 Donations
             </div>
 
