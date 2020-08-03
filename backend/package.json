@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jehernandezv/Lab3Distribuidos.git"
+    "url": "git+https://github.com/jehernandezv/Lab3DistribuidosService.git"
   },
   "author": "Jhonn hernandez - Cristian Lopez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jehernandezv/Lab3Distribuidos/issues"
+    "url": "https://github.com/jehernandezv/Lab3DistribuidosService.git/issues"
   },
-  "homepage": "https://github.com/jehernandezv/Lab3Distribuidos#readme",
+  "homepage": "https://github.com/jehernandezv/Lab3DistribuidosService.git#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
